@@ -1,0 +1,321 @@
+/**
+ * Subscribers Page Styles
+ * 
+ * @package WP_Blog_Mailer
+ * @since 2.0.0
+ */
+
+/* ==========================================================================
+   Subscribers Page Layout
+   ========================================================================== */
+
+.wpbm-subscribers-page {
+    margin: 20px 20px 0 2px;
+}
+
+.wpbm-subscribers-page .wp-heading-inline {
+    margin-right: 10px;
+}
+
+.wpbm-subscribers-page .page-title-action {
+    margin-left: 5px;
+}
+
+/* ==========================================================================
+   Search Form
+   ========================================================================== */
+
+.wpbm-search-form {
+    float: right;
+    margin: 20px 0;
+}
+
+.wpbm-search-form .search-box {
+    margin: 0;
+}
+
+.wpbm-search-form input[type="search"] {
+    width: 280px;
+    margin-right: 5px;
+}
+
+/* ==========================================================================
+   Subscribers Table
+   ========================================================================== */
+
+.wpbm-subscribers-page .wp-list-table {
+    margin-top: 20px;
+}
+
+.wpbm-subscribers-page .column-name {
+    width: 25%;
+}
+
+.wpbm-subscribers-page .column-email {
+    width: 25%;
+}
+
+.wpbm-subscribers-page .column-status {
+    width: 15%;
+}
+
+.wpbm-subscribers-page .column-date {
+    width: 20%;
+}
+
+.wpbm-subscribers-page .column-source {
+    width: 15%;
+}
+
+/* Status Badges */
+.wpbm-status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.wpbm-status-confirmed {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.wpbm-status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+/* ==========================================================================
+   Modal Styles
+   ========================================================================== */
+
+.wpbm-modal {
+    display: none;
+    position: fixed;
+    z-index: 100000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.wpbm-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wpbm-modal-content {
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.wpbm-modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wpbm-modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.wpbm-modal-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    color: #666;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.wpbm-modal-close:hover {
+    color: #000;
+}
+
+.wpbm-modal-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.wpbm-modal-body .form-table th {
+    width: 150px;
+    padding: 15px 10px 15px 0;
+}
+
+.wpbm-modal-body .form-table td {
+    padding: 15px 10px;
+}
+
+.wpbm-modal-body .required {
+    color: #d63638;
+}
+
+.wpbm-modal-body .wpbm-form-error {
+    color: #d63638;
+    background-color: #fcf0f1;
+    border-left: 4px solid #d63638;
+    padding: 12px;
+    margin: 15px 0 0;
+}
+
+.wpbm-modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #ddd;
+    text-align: right;
+}
+
+.wpbm-modal-footer .button {
+    margin-left: 10px;
+}
+
+/* ==========================================================================
+   Loading States
+   ========================================================================== */
+
+.wpbm-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.wpbm-loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #2271b1;
+    border-radius: 50%;
+    animation: wpbm-spin 0.8s linear infinite;
+}
+
+@keyframes wpbm-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media screen and (max-width: 782px) {
+    .wpbm-search-form {
+        float: none;
+        margin: 10px 0;
+    }
+
+    .wpbm-search-form input[type="search"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .wpbm-modal-content {
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    .wpbm-modal-header,
+    .wpbm-modal-body,
+    .wpbm-modal-footer {
+        padding: 15px;
+    }
+
+    .wpbm-modal-body .form-table th,
+    .wpbm-modal-body .form-table td {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .wpbm-modal-body .form-table th {
+        padding-bottom: 5px;
+    }
+
+    .wpbm-modal-body .form-table td {
+        padding-top: 0;
+    }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    .page-title-action,
+    .wpbm-search-form,
+    .tablenav,
+    .row-actions,
+    .column-cb {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   Accessibility Improvements
+   ========================================================================== */
+
+.wpbm-modal:focus {
+    outline: 2px solid #2271b1;
+    outline-offset: 2px;
+}
+
+.wpbm-modal-close:focus {
+    outline: 2px solid #2271b1;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .wpbm-status-badge {
+        border-width: 2px;
+    }
+
+    .wpbm-modal-content {
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .wpbm-modal {
+        transition: none;
+    }
+
+    @keyframes wpbm-spin {
+        0%,
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+}

@@ -1,0 +1,357 @@
+/**
+ * Subscribe Form Styles
+ * 
+ * Frontend styles for the subscription form
+ * 
+ * @package WP_Blog_Mailer
+ * @since 2.0.0
+ */
+
+/* ==========================================================================
+   Form Wrapper
+   ========================================================================== */
+
+.wpbm-subscribe-form-wrapper {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wpbm-form-title {
+    margin: 0 0 15px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+.wpbm-form-description {
+    margin: 0 0 25px;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   Messages
+   ========================================================================== */
+
+.wpbm-message {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.wpbm-message-success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.wpbm-message-error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.wpbm-message-warning {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+}
+
+/* ==========================================================================
+   Form Fields
+   ========================================================================== */
+
+.wpbm-subscribe-form {
+    margin: 0;
+}
+
+.wpbm-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.wpbm-form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.wpbm-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.wpbm-label .required {
+    color: #d63638;
+}
+
+.wpbm-input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.wpbm-input:focus {
+    outline: none;
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+}
+
+.wpbm-input::placeholder {
+    color: #999;
+}
+
+/* ==========================================================================
+   Submit Button
+   ========================================================================== */
+
+.wpbm-form-submit {
+    margin-top: 5px;
+}
+
+.wpbm-button {
+    width: 100%;
+    padding: 14px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #2271b1;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.wpbm-button:hover {
+    background-color: #135e96;
+}
+
+.wpbm-button:active {
+    transform: translateY(1px);
+}
+
+.wpbm-button:focus {
+    outline: 2px solid #2271b1;
+    outline-offset: 2px;
+}
+
+.wpbm-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Loading state */
+.wpbm-button.loading {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+}
+
+.wpbm-button.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    margin: -9px 0 0 -9px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: wpbm-spin 0.6s linear infinite;
+}
+
+@keyframes wpbm-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================================================
+   Form Note
+   ========================================================================== */
+
+.wpbm-form-note {
+    margin: 15px 0 0;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media screen and (max-width: 600px) {
+    .wpbm-subscribe-form-wrapper {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+
+    .wpbm-form-title {
+        font-size: 20px;
+    }
+
+    .wpbm-form-description {
+        font-size: 14px;
+    }
+
+    .wpbm-input,
+    .wpbm-button {
+        font-size: 14px;
+    }
+}
+
+/* ==========================================================================
+   Theme Variations
+   ========================================================================== */
+
+/* Minimal variant */
+.wpbm-subscribe-form-wrapper.minimal {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 20px 0;
+}
+
+/* Inline variant */
+.wpbm-subscribe-form-wrapper.inline .wpbm-form-fields {
+    flex-direction: row;
+    gap: 10px;
+}
+
+.wpbm-subscribe-form-wrapper.inline .wpbm-form-field {
+    flex: 1;
+}
+
+.wpbm-subscribe-form-wrapper.inline .wpbm-form-submit {
+    flex: 0 0 auto;
+    margin-top: 0;
+}
+
+.wpbm-subscribe-form-wrapper.inline .wpbm-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.wpbm-subscribe-form-wrapper.inline .wpbm-button {
+    width: auto;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 600px) {
+    .wpbm-subscribe-form-wrapper.inline .wpbm-form-fields {
+        flex-direction: column;
+    }
+
+    .wpbm-subscribe-form-wrapper.inline .wpbm-form-submit {
+        margin-top: 5px;
+    }
+
+    .wpbm-subscribe-form-wrapper.inline .wpbm-button {
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   Dark Mode Support
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    .wpbm-subscribe-form-wrapper {
+        background: #1e1e1e;
+        border-color: #333;
+    }
+
+    .wpbm-form-title,
+    .wpbm-label {
+        color: #e5e5e5;
+    }
+
+    .wpbm-form-description,
+    .wpbm-form-note {
+        color: #aaa;
+    }
+
+    .wpbm-input {
+        background-color: #2a2a2a;
+        border-color: #444;
+        color: #e5e5e5;
+    }
+
+    .wpbm-input::placeholder {
+        color: #666;
+    }
+
+    .wpbm-input:focus {
+        border-color: #4a9eff;
+        box-shadow: 0 0 0 1px #4a9eff;
+    }
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .wpbm-subscribe-form-wrapper {
+        border-width: 2px;
+    }
+
+    .wpbm-input {
+        border-width: 2px;
+    }
+
+    .wpbm-button {
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .wpbm-input,
+    .wpbm-button {
+        transition: none;
+    }
+
+    @keyframes wpbm-spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+/* Focus visible for keyboard navigation */
+.wpbm-input:focus-visible,
+.wpbm-button:focus-visible {
+    outline: 2px solid #2271b1;
+    outline-offset: 2px;
+}
