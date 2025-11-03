@@ -1,0 +1,47 @@
+{
+    "name": "wp-blog-mailer/wp-blog-mailer",
+    "description": "Automated email notifications for WordPress blog subscribers",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "version": "2.0.0",
+    "authors": [
+        {
+            "name": "WP Blog Mailer",
+            "email": "support@wpblogmailer.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "wp-coding-standards/wpcs": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "WPBlogMailer\\Core\\": "includes/Core/",
+            "WPBlogMailer\\Common\\": "includes/Common/",
+            "WPBlogMailer\\Common\\Database\\": "includes/Common/Database/",
+            "WPBlogMailer\\Common\\Models\\": "includes/Common/Models/",
+            "WPBlogMailer\\Common\\Services\\": "includes/Common/Services/",
+            "WPBlogMailer\\Common\\Utilities\\": "includes/Common/Utilities/",
+            "WPBlogMailer\\Free\\": "includes/Free/",
+            "WPBlogMailer\\Starter\\": "includes/Starter/",
+            "WPBlogMailer\\Pro\\": "includes/Pro/",
+            "WPBlogMailer\\Admin\\": "includes/Admin/"
+        },
+        "files": [
+            "includes/Common/Utilities/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WPBlogMailer\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "phpcs": "phpcs --standard=WordPress includes/",
+        "phpcbf": "phpcbf --standard=WordPress includes/"
+    }
+}
